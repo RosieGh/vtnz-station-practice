@@ -1,0 +1,5 @@
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\VTNZ\bin\Debug\VTNZ.dll
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\VTNZ\bin\Debug\VTNZ.pdb
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\VTNZ\obj\Debug\VTNZ.csproj.CoreCompileInputs.cache
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\VTNZ\obj\Debug\VTNZ.dll
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\VTNZ\obj\Debug\VTNZ.pdb

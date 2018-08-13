@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,60 +9,103 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VTNZ;
 
-namespace oscar
+namespace Boundary
 {
     public partial class Form1 : Form
     {
-        private vtnz _objVTNZ;
+       private VTNZ_station _objvtnz;
         public Form1()
         {
             InitializeComponent();
-            _objVTNZ = new vtnz("vtnz", "North Harbour 3-5 Saturn Place, Albany", "000", "Mon -Fri - 7.30am - 5pm");
+            _objvtnz = new VTNZ_station("VTNZ NORTH HARBOUR","3-5Saturn Place,ALbany",
+                "0000","Mon- Fri - 7:30am - 5:30 pm");
+
         }
 
-        // the window event is used to preload the information on the window
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 1 show station detail
-            lblHeader.Text = _objVTNZ.ShowStationDetail();
-            
-            // 2 Add service list
-            IServiceType singleService = new CarWrap("WoF inspection", 50M);
-            _objVTNZ.AddService(singleService);
-            singleService = new CarWrap("Modified vehicle check-up", 200M);
-            _objVTNZ.AddService(singleService);
-            singleService = new CarWrap("Pre-purchased Inspection", 150M);
-            _objVTNZ.AddService(singleService);
-            singleService = new CarWrap("Certificate of Fitness", 210M);
-            _objVTNZ.AddService(singleService);
+            label_Header.Text = _objvtnz.ShowStationDetail();
+           // //2.show the list od servicelist
+           //IServiceItem singleService = new CarWrap("WOF",200M);
+           // _objvtnz.AddSingleServiceIntoList(singleService);
+           // singleService = new CarWrap("Car inspection",300M);
+           // _objvtnz.AddSingleServiceIntoList(singleService);
+           // singleService = new CarWrap("Fitness of CheckUp", 250M);
+           // _objvtnz.AddSingleServiceIntoList(singleService);
 
-            // 3 put service list to the list box, show the information of the service
-            for (int i=0; i< _objVTNZ.ServiceList.Count; i++)
-            {
-                litInspections.Items.Add(_objVTNZ.ServiceList.ElementAt(i).ServiceName + " " +
-                   Convert.ToString(_objVTNZ.ServiceList.ElementAt(i).ServicePrice));
-            }
+           // for (int i = 0; i < _objvtnz.ObjServiceList.Count;i++)
+           // {
+           //     listBox_SerciceList.Items.Add(_objvtnz.ObjServiceList.ElementAt(i).ServiceName+" "+
+           //         Convert.ToString(_objvtnz.ObjServiceList.ElementAt(i).ServicePrice));
+           // }
 
         }
 
-        private void btnInspection_Click(object sender, EventArgs e)
+        private void Button_Request_Click(object sender, EventArgs e)
         {
-            // 1 find which one do we select from the list box
-            int selectedItemIndex = litInspections.SelectedIndex;
+                int selctedIndexNo = listBox_SerciceList.SelectedIndex;
+                if (selctedIndexNo == -1)
+                {
+                    MessageBox.Show("Please select a service type111", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                IServiceItem selectedServiceItemFromTheList = _objvtnz.ObjServiceList.ElementAt(selctedIndexNo);
+                _objvtnz.ShowSelectedService(selectedServiceItemFromTheList);
 
-            // 2 find the corresponding one in our vtnz service list
-            IServiceType selectedService = _objVTNZ.ServiceList.ElementAt(selectedItemIndex);
+                label_PromptDetails.Text = _objvtnz.GetAllServiceDetail();
+                label_PromptTotalPrice.Text = _objvtnz.GetTotalPrice();
+                label_PromptTotalNumber.Text = _objvtnz.GetTotalNUmberService();
 
-            // 3 call request to accumulate those three information
-            _objVTNZ.Request(selectedService);
 
-            // 4 show all those three information on the control
+                }
+        }
 
-            lbl_ReqDetailsPrompt.Text = _objVTNZ.ShowAllDetail();
+        private void radioButton_Car_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (radioButton_Car.Checked)
+                {
+                    //2.show the list od servicelist
+                    IServiceItem singleService = new CarWrap("WOF", 200M);
+                    _objvtnz.AddSingleServiceIntoList(singleService);
+                    singleService = new CarWrap("Car inspection", 300M);
+                    _objvtnz.AddSingleServiceIntoList(singleService);
+                    singleService = new CarWrap("Fitness of CheckUp", 250M);
+                    _objvtnz.AddSingleServiceIntoList(singleService);
 
-            lbl_reqTotalPricePrompt.Text = _objVTNZ.GetTotalPrice();
+                    for (int i = 0; i < _objvtnz.ObjServiceList.Count; i++)
+                    {
+                        listBox_SerciceList.Items.Add(_objvtnz.ObjServiceList.ElementAt(i).ServiceName + " " +
+                            Convert.ToString(_objvtnz.ObjServiceList.ElementAt(i).ServicePrice));
+                    }
 
-            lbl_ReqTotalNumPrompt.Text = _objVTNZ.GetTotalNumber();
+                }
+                if (radioButton_Truck.Checked)
+                {
+                    //2.show the list od servicelist
+                    IServiceItem singleService = new CarWrap("WOF", 200M);
+                    _objvtnz.AddSingleServiceIntoList(singleService);
+                    singleService = new CarWrap("Car inspection", 300M);
+                    _objvtnz.AddSingleServiceIntoList(singleService);
+                    singleService = new CarWrap("Fitness of CheckUp", 250M);
+                    _objvtnz.AddSingleServiceIntoList(singleService);
+
+                    for (int i = 0; i < _objvtnz.ObjServiceList.Count; i++)
+                    {
+                        listBox_SerciceList.Items.Add(_objvtnz.ObjServiceList.ElementAt(i).ServiceName + " " +
+                            Convert.ToString(_objvtnz.ObjServiceList.ElementAt(i).ServicePrice));
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Exceeding 24 hours");
+
+            }
         }
     }
 }

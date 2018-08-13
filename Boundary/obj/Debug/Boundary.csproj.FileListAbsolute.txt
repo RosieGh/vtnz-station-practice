@@ -1,0 +1,13 @@
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\bin\Debug\Boundary.exe.config
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\bin\Debug\Boundary.exe
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\bin\Debug\Boundary.pdb
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.csprojAssemblyReference.cache
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.Properties.Resources.resources
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.csproj.GenerateResource.cache
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.csproj.CoreCompileInputs.cache
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.exe
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.pdb
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\bin\Debug\VTNZ.dll
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\bin\Debug\VTNZ.pdb
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.csproj.CopyComplete
+C:\Users\barcu\Downloads\158.326\Tutorial\TestPractice1\Boundary\obj\Debug\Boundary.Form1.resources

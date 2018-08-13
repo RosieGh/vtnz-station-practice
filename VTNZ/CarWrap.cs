@@ -5,24 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace VTNZ
-{
-    public class CarWrap : IServiceType
+{ 
+    public class CarWrap: IServiceItem
     {
-        private CarInspection _objCarInspection;
+        private CarInspection _objCar;
 
-
+        public CarWrap() { }
         public CarWrap(string name, decimal price)
         {
-            _objCarInspection = new CarInspection(name, price);
-            //this.ServiceName = name;
-            //this.ServicePrice = price;
+            _objCar = new CarInspection(name, price);
         }
-        public string ServiceName { get => _objCarInspection.ServiceName; set => _objCarInspection.ServiceName = value; }
-        public decimal ServicePrice { get => _objCarInspection.ServicePrice; set => _objCarInspection.ServicePrice= value; }
-     
-        public string ShowServiceDetail()
+        public string ServiceName
         {
-            return _objCarInspection.ShowCarInspectionDetail();
+            get => _objCar.CarServiceName;
+            set => _objCar.CarServiceName = value;
+ 
+        }
+
+        public decimal ServicePrice
+        {
+            get => _objCar.CarServicePrice;
+            set => _objCar.CarServicePrice = value;
+        }
+
+
+        public string ShowService()
+        {
+           return _objCar.ShowCarService();
         }
     }
 }

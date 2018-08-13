@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AAA212DC-74C3-41CC-860F-7168ED862BD0}</ProjectGuid>
+    <ProjectGuid>{741B6670-708F-49DB-A287-FB55ADC6286D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>oscar</RootNamespace>
-    <AssemblyName>oscar</AssemblyName>
+    <RootNamespace>Boundary</RootNamespace>
+    <AssemblyName>Boundary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exception.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VTNZ\VTNZ.csproj">
-      <Project>{f1f8a7a4-117a-45b9-9465-02d3a699f14d}</Project>
+      <Project>{2e8c6d34-caa0-4217-859a-5e2995b67d48}</Project>
       <Name>VTNZ</Name>
     </ProjectReference>
   </ItemGroup>

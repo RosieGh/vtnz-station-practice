@@ -8,22 +8,32 @@ namespace VTNZ
 {
     public class CarInspection
     {
-        private string _CarServiceName;
-        private decimal _CarServicePrice;
-        
-        public CarInspection(string carServiceName, decimal carServicePrice)
+        private string _carServiceName;
+        private decimal _carServicePrice;
+
+        public CarInspection() { }
+
+        public CarInspection(string name, decimal price)
         {
-            this._CarServiceName = carServiceName;
-            this._CarServicePrice = carServicePrice;
+            this._carServiceName = name;
+            this._carServicePrice = price;
+        }
+        public string CarServiceName
+        {
+            get => _carServiceName;
+            set => _carServiceName = value;
         }
 
-        public string ServiceName { get => _CarServiceName; set => _CarServiceName = value; }
-        public decimal ServicePrice { get => _CarServicePrice; set => _CarServicePrice = value; }
-
-        public string ShowCarInspectionDetail()
+        public decimal CarServicePrice
         {
-            return "Inspection Type " + this._CarServicePrice + " \nPrice $" +
-                Convert.ToString(this._CarServicePrice);
+            get => _carServicePrice;
+            set => _carServicePrice = value;
+        }
+
+        public string ShowCarService()
+        {
+            return "Inspection Type " + CarServiceName + "\n"
+                 + "Price $" + Convert.ToString(CarServicePrice);
         }
     }
 }

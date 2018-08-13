@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace oscar.Properties
+namespace Boundary.Properties
 {
 
 

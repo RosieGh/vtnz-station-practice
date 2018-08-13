@@ -8,34 +8,33 @@ namespace VTNZ
 {
     public abstract class Station
     {
-        
-        protected string z_registrationName;
-        protected string z_address;
-        protected string z_telNumber;
-        protected string z_businessTime;
+        protected string zStationName;
+        protected string zStationAddress;
+        protected string zStationTelNum;
+        protected string zStationOpenHour;
 
-        public string RegistrationName{ get;set;}
-
-        public string Address
+        public string StationName
         {
-            get;
-            set;
+            get => zStationName;
+            set => zStationName = value;
         }
 
-        public string TelNumber
+        public string StaionAddress
         {
-            get;
-            set;
+            get; set;
         }
 
-        public string BusinessTime
+        public string StationOpenHour
         {
-            get;
-            set;
+            get; set;
         }
 
+        public string StationTelNum
+        {
+            get; set;
+        }
 
         public abstract string ShowStationDetail();
+    
     }
-
 }

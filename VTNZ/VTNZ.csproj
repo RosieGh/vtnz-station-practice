@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1F8A7A4-117A-45B9-9465-02D3A699F14D}</ProjectGuid>
+    <ProjectGuid>{2E8C6D34-CAA0-4217-859A-5E2995B67D48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VTNZ</RootNamespace>
@@ -42,10 +42,14 @@
   <ItemGroup>
     <Compile Include="CarInspection.cs" />
     <Compile Include="CarWrap.cs" />
-    <Compile Include="IServiceType.cs" />
+    <Compile Include="IServiceItem.cs" />
     <Compile Include="Station.cs" />
+    <Compile Include="VTNZ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vtnz.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
